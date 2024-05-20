@@ -1,4 +1,9 @@
 // ignore_for_file: camel_case_types
+import 'package:ekazi/pages/main/pages/chats_page.dart';
+import 'package:ekazi/pages/main/pages/home_page.dart';
+import 'package:ekazi/pages/main/pages/notifications_page.dart';
+import 'package:ekazi/pages/main/pages/profile_page.dart';
+import 'package:ekazi/pages/main/pages/search_page.dart';
 import 'package:ekazi/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:icons_plus/icons_plus.dart';
@@ -39,14 +44,13 @@ class _basePageState extends State<basePage> {
                 Icons.search,
                 size: 26,
               ),
-              // Example different icon and color
               label: '',
             ),
             BottomNavigationBarItem(
               icon: Icon(
                 FontAwesome.message,
                 size: 20,
-              ), // Example different icon and color
+              ),
               activeIcon: Icon(
                 Icons.message,
                 size: 26,
@@ -56,7 +60,7 @@ class _basePageState extends State<basePage> {
             BottomNavigationBarItem(
               icon: Icon(
                 OctIcons.bell,
-              ), // Example different icon and color
+              ),
               activeIcon: Icon(
                 OctIcons.bell_fill,
               ),
@@ -65,7 +69,7 @@ class _basePageState extends State<basePage> {
             BottomNavigationBarItem(
               icon: Icon(
                 OctIcons.person,
-              ), // Example different icon and color
+              ),
               activeIcon: Icon(
                 OctIcons.person_fill,
               ),
@@ -85,6 +89,13 @@ class _basePageState extends State<basePage> {
           },
         ),
       ),
+      body: [
+        const HomePage(),
+        const SearchPage(),
+        const ChatsPage(),
+        const NotificationsPage(),
+        const ProfilePage()
+      ][selectedTab],
     );
   }
 }
