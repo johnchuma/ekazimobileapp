@@ -19,28 +19,28 @@ class SendApplicationPage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
-                SizedBox(
+                const SizedBox(
                 height: 10,
               ),
               paragraph(text: "Subject"),
-              SizedBox(
+              const SizedBox(
                 height: 5,
               ),
               TextForm(
                 hint: "Full Stack Developer Job application",
                 initialValue: "Full Stack Developer Job application", lines: 2),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               paragraph(text: "Write cover letter"),
-              SizedBox(
+              const SizedBox(
                 height: 5,
               ),
               TextForm(hint: "Write something here.", lines: 8),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               customButton(text: "Send Application")

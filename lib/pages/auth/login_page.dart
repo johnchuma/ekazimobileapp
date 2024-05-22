@@ -60,7 +60,7 @@ class LoginPage extends StatelessWidget {
                     textAlign: TextAlign.center,
                     text: TextSpan(children: [
                       TextSpan(
-                          text: "A place where=",
+                          text: "A place where",
                           style: GoogleFonts.sen(
                               fontSize: 25,
                               color: primaryColor,
