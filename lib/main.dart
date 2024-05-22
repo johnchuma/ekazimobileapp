@@ -1,5 +1,4 @@
 import 'package:ekazi/pages/auth/login_page.dart';
-import 'package:ekazi/pages/main/base_page.dart';
 import 'package:ekazi/pages/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

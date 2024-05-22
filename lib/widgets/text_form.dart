@@ -32,6 +32,7 @@ Widget TextForm(
               keyboardType: textInputType ?? TextInputType.text,
               style: TextStyle(color: textColor),
               maxLines: lines ?? 1,
+              
               validator: validator ??
                   (value) {
                     if (value == "") {
@@ -47,6 +48,7 @@ Widget TextForm(
                         width: 0,
                       ),
                   border: InputBorder.none,
+                  
                   hintText: hint),
             ),
           )),

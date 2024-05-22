@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ekazi/pages/main/pages/job_details_page.dart';
 import 'package:ekazi/utils/box_decoration.dart';
 import 'package:ekazi/widgets/avatar.dart';
@@ -19,10 +20,9 @@ Widget jobItem({image, title}) {
           padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
           child: Row(
             children: [
-              avatar(
-                  size: 40,
-                  image: image ??
-                      "https://upload.wikimedia.org/wikipedia/commons/6/6f/HP_logo_630x630.png"),
+              SizedBox(
+                      height: 30,
+                      child: CachedNetworkImage(imageUrl: image)),
               const SizedBox(
                 width: 10,
               ),

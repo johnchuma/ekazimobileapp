@@ -47,13 +47,13 @@ class HomePage extends StatelessWidget {
                   text: "General Jobs",
                 ),
                 Tab(
-                  text: "Matched Jobs",
+                  text: "Matched Jobs (2)",
                 ),
                 Tab(
-                  text: "Applied Jobs",
+                  text: "Applied Jobs (1)",
                 ),
                 Tab(
-                  text: "Saved Jobs",
+                  text: "Saved Jobs (0)",
                 ),
               ]),
         ),

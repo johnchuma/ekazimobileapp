@@ -25,45 +25,19 @@ Widget notificationItem({bool isRead = false, title}) {
                 children: [
                   paragraph(
                       text: title ??
-                          "Est nostrud exercitation laborum sint proident ex aliquip ipsum minim",
-                      maxLines: 2),
-                  mutedText(text: "2 min ago", maxLines: 2)
+                          "Laborum duis duis ipsum veniam. Ullamco proident ea voluptate nisi sint veniam occaecat consectetur. Consequat pariatur sit do sunt cillum labore eu nulla velit elit elit reprehenderit. Tempor sunt aliquip culpa veniam ipsum velit officia magna anim proident in voluptate. Velit ut ullamco aute elit sit commodo excepteur laborum tempor sit consequat eu occaecat duis. Cillum officia adipisicing mollit ex incididunt laboris eu pariatur fugiat exercitation ut.",
+                      maxLines: 2,
+                      fontWeight: isRead ? null : FontWeight.bold),
+                  mutedText(
+                      text: "2 min ago",
+                      maxLines: 2,
+                      fontWeight: isRead ? null : FontWeight.bold)
                 ],
               )),
-              SizedBox(
+              const SizedBox(
                 width: 10,
               ),
-              isRead
-                  ? Row(
-                      children: [
-                        ClipOval(
-                          child: Container(
-                            width: 10,
-                            height: 10,
-                            color: borderColor,
-                          ),
-                        ),
-                        SizedBox(
-                          width: 5,
-                        ),
-                        mutedText(text: "Read"),
-                      ],
-                    )
-                  : Row(
-                      children: [
-                        ClipOval(
-                          child: Container(
-                            width: 10,
-                            height: 10,
-                            color: Colors.green,
-                          ),
-                        ),
-                        SizedBox(
-                          width: 5,
-                        ),
-                        mutedText(text: "Unread"),
-                      ],
-                    )
+              isRead?Container():ClipOval(child: Container(height: 10,width: 10,color: Colors.green))
             ],
           ),
         ),

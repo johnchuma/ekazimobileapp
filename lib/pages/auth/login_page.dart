@@ -11,6 +11,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -50,14 +51,39 @@ class LoginPage extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 15),
             child: Column(
               children: [
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
-                heading(text: "Welcome to eKazi", fontSize: 30),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 10),
+                  child: RichText(
+                    textAlign: TextAlign.center,
+                    text: TextSpan(children: [
+                      TextSpan(
+                          text: "A place where=",
+                          style: GoogleFonts.sen(
+                              fontSize: 25,
+                              color: primaryColor,
+                              fontWeight: FontWeight.bold)),
+                      TextSpan(
+                          text: " employers ",
+                          style: GoogleFonts.sen(
+                              fontSize: 25,
+                              color: secondaryColor,
+                              fontWeight: FontWeight.bold)),
+                      TextSpan(
+                          text: "meets potential candidates",
+                          style: GoogleFonts.sen(
+                              fontSize: 25,
+                              color: primaryColor,
+                              fontWeight: FontWeight.bold))
+                    ]),
+                  ),
+                ),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 30),
                   child: mutedText(
-                      text: "To continue to our platform you must Login first",
+                      text: "Set your career in motion with ekazi.",
                       textAlign: TextAlign.center),
                 ),
                 SizedBox(

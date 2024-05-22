@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ekazi/pages/main/pages/send_application_page.dart';
 import 'package:ekazi/utils/box_decoration.dart';
 import 'package:ekazi/utils/colors.dart';
@@ -24,7 +25,7 @@ class JobDetailsPage extends StatelessWidget {
       appBar: appbar(title: "Job Details"),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
+          padding: const EdgeInsets.symmetric(horizontal: 15),
           child: Column(
             children: [
               Container(
@@ -37,10 +38,9 @@ class JobDetailsPage extends StatelessWidget {
                     children: [
                       Row(
                         children: [
-                          avatar(
-                              size: 40,
-                              image:
-                                  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDA1JSs-3s1XYt2SfBx6WGOV0L1keDp0Owt7UB_u5q2A&s"),
+                           SizedBox(
+                      height: 30,
+                      child: CachedNetworkImage(imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDA1JSs-3s1XYt2SfBx6WGOV0L1keDp0Owt7UB_u5q2A&s")),
                           const SizedBox(
                             width: 10,
                           ),
@@ -61,18 +61,15 @@ class JobDetailsPage extends StatelessWidget {
                       ),
                       Wrap(
                         runAlignment: WrapAlignment.start,
-                        spacing: 4,
+                        spacing: 2,
                         runSpacing: 4,
                         alignment: WrapAlignment.start,
                         direction: Axis.horizontal,
                         children: [
-                          pill(
-                              text: "Posted 3 min ago",
-                              fontWeight: FontWeight.w400),
-                          pill(
-                              text: "Dar es salaam",
-                              fontWeight: FontWeight.w400),
-                          pill(text: "2 positions", fontWeight: FontWeight.w400)
+                         pill(text: "3 min ago", fontWeight: FontWeight.w400),
+                    pill(text: "2 positions", fontWeight: FontWeight.w400),
+                    pill(text: "30 views", fontWeight: FontWeight.w400),
+                    pill(text: "4 applicants", fontWeight: FontWeight.w400),
                         ],
                       ),
                       const SizedBox(
@@ -142,6 +139,21 @@ class JobDetailsPage extends StatelessWidget {
                           paragraph(maxLines: 2, text: "Full Time"),
                         ],
                       ),
+                         Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          mutedText(text: "Location"),
+                          paragraph(maxLines: 2, text: "Mikocheni, Dar es salaam"),
+                        ],
+                      ),
+                         Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          mutedText(text: "Deadline"),
+                          paragraph(maxLines: 2, text: "20/05/2024"),
+                        ],
+                      ),
+                        
                     ],
                   ),
                 ),

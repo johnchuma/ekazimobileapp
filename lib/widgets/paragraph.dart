@@ -6,6 +6,7 @@ Widget paragraph(
     color,
     double? fontSize,
     int? maxLines,
+    FontWeight? fontWeight,
     TextDecoration? textDecoration}) {
   return Text(text,
       maxLines: maxLines ?? 50,
@@ -13,6 +14,6 @@ Widget paragraph(
       style: TextStyle(
           color: color ?? textColor,
           decoration: textDecoration ?? TextDecoration.none,
-          fontWeight: FontWeight.w500,
+          fontWeight: fontWeight ?? FontWeight.w500,
           fontSize: fontSize ?? 16));
 }

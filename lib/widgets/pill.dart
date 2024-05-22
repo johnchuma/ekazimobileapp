@@ -21,7 +21,7 @@ Widget pill(
               ? primaryColor
               : background ?? Colors.grey.withOpacity(0.1),
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 5),
             child: heading2(
                 text: text,
                 fontWeight: fontWeight ?? FontWeight.bold,

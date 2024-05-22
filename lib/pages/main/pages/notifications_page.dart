@@ -1,3 +1,4 @@
+import 'package:ekazi/pages/main/notification_tabs/all_notifications.dart';
 import 'package:ekazi/utils/colors.dart';
 import 'package:ekazi/widgets/heading_text.dart';
 import 'package:ekazi/widgets/notification_item.dart';
@@ -8,25 +9,35 @@ class NotificationsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: backgroundColor,
-      appBar: AppBar(
-        leading: Container(),
-        leadingWidth: 0,
+    return DefaultTabController(
+      length: 3,
+      child: Scaffold(
         backgroundColor: backgroundColor,
-        title: heading(text: "Notifications"),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 15),
-        child: ListView(
-          children: [
-            notificationItem(),
-            notificationItem(),
-            notificationItem(),
-            notificationItem(isRead: true),
-            notificationItem(isRead: true)
-          ],
+        
+        appBar: AppBar(
+          leading: Container(),
+          bottom: TabBar(
+                isScrollable: true,
+                tabAlignment: TabAlignment.start,
+                labelColor: primaryColor,
+                indicatorColor: primaryColor,
+                tabs: const [
+                  Tab(
+                    text: "All notifications (102)",
+                  ),
+                  Tab(
+                    text: "Important(5)",
+                  ),
+                  Tab(
+                    text: "Promotions (2)",
+                  ),
+                  
+                ]),
+          leadingWidth: 0,
+          backgroundColor: backgroundColor,
+          title: heading(text: "Notifications"),
         ),
+        body: TabBarView(children: [AllNotifications(),Container(),Container()]),
       ),
     );
   }

@@ -1,5 +1,6 @@
 import 'package:ekazi/pages/main/pages/choose_template_page.dart';
 import 'package:ekazi/pages/main/pages/my_profile_page.dart';
+import 'package:ekazi/pages/main/pages/privacy_page.dart';
 import 'package:ekazi/pages/main/pages/saved_cv_page.dart';
 import 'package:ekazi/pages/main/pages/upgrade_page.dart';
 import 'package:ekazi/utils/box_decoration.dart';
@@ -35,7 +36,7 @@ class ProfilePage extends StatelessWidget {
               SizedBox(
                 height: 10,
               ),
-              avatar(size: 120),
+              avatar(size: 120,image: "https://img.freepik.com/free-photo/side-view-ofserious-man_23-2148946213.jpg"),
               SizedBox(
                 height: 10,
               ),
@@ -118,6 +119,84 @@ class ProfilePage extends StatelessWidget {
                             width: 10,
                           ),
                           paragraph(text: "Generate CV")
+                        ],
+                      ),
+                    )),
+              ),
+                SizedBox(
+                height: 5,
+              ),
+                   GestureDetector(
+                onTap: () {
+                  Get.to(() => PrivacyPage());
+                },
+                child: Container(
+                    decoration: decoration(),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 15, horizontal: 10),
+                      child: Row(
+                        children: [
+                          Icon(
+                            Icons.lock,
+                            color: mutedColor,
+                          ),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          paragraph(text: "Set Privacy")
+                        ],
+                      ),
+                    )),
+              ),
+                SizedBox(
+                height: 5,
+              ),
+                   GestureDetector(
+                onTap: () {
+                  // Get.to(() => ChooseTemplatePage());
+                },
+                child: Container(
+                    decoration: decoration(),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 15, horizontal: 10),
+                      child: Row(
+                        children: [
+                          Icon(
+                            Icons.edit_document,
+                            color: mutedColor,
+                          ),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          paragraph(text: "Consent Form")
+                        ],
+                      ),
+                    )),
+              ),
+                SizedBox(
+                height: 5,
+              ),
+                   GestureDetector(
+                onTap: () {
+                  // Get.to(() => ChooseTemplatePage());
+                },
+                child: Container(
+                    decoration: decoration(),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 15, horizontal: 10),
+                      child: Row(
+                        children: [
+                          Icon(
+                            Icons.settings,
+                            color: mutedColor,
+                          ),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          paragraph(text: "Settings")
                         ],
                       ),
                     )),
