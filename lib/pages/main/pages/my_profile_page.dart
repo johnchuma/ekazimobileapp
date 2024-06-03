@@ -15,7 +15,6 @@ import 'package:ekazi/widgets/heading2_text.dart';
 import 'package:ekazi/widgets/muted_text.dart';
 import 'package:ekazi/widgets/paragraph.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class MyProfilePage extends StatelessWidget {
   const MyProfilePage({super.key});
@@ -26,7 +25,7 @@ class MyProfilePage extends StatelessWidget {
       backgroundColor: backgroundColor,
       appBar: appbar(title: "My Profile"),
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 15),
+        padding: const EdgeInsets.symmetric(horizontal: 15),
         child: SingleChildScrollView(
           child: Column(
             children: [
@@ -59,47 +58,47 @@ class MyProfilePage extends StatelessWidget {
                           )
                         ]),
                   )),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
-              PrimaryDetails(),
-              SizedBox(
+              const PrimaryDetails(),
+              const SizedBox(
                 height: 10,
               ),
-              EducationBackground(),
-              SizedBox(
+              const EducationBackground(),
+              const SizedBox(
                 height: 10,
               ),
-              BriefCareer(),
-              SizedBox(
+              const BriefCareer(),
+              const SizedBox(
                 height: 10,
               ),
-              ArchivementsAndCareer(),
-              SizedBox(
+              const ArchivementsAndCareer(),
+              const SizedBox(
                 height: 10,
               ),
-              WorkExperiences(),
-              SizedBox(
+              const WorkExperiences(),
+              const SizedBox(
                 height: 10,
               ),
-              Skills(),
-              SizedBox(
+              const Skills(),
+              const SizedBox(
                 height: 10,
               ),
-              Refrees(),
-              SizedBox(
+              const Refrees(),
+              const SizedBox(
                 height: 10,
               ),
-              Languages(),
-              SizedBox(
+              const Languages(),
+              const SizedBox(
                 height: 10,
               ),
-              ProficiencyQualifications(),
-              SizedBox(
+              const ProficiencyQualifications(),
+              const SizedBox(
                 height: 10,
               ),
-              TrainingsAndWorkshops(),
-              SizedBox(
+              const TrainingsAndWorkshops(),
+              const SizedBox(
                 height: 50,
               ),
             ],

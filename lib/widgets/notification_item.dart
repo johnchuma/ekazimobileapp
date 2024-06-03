@@ -1,12 +1,7 @@
-import 'package:ekazi/pages/main/pages/job_details_page.dart';
 import 'package:ekazi/utils/box_decoration.dart';
-import 'package:ekazi/utils/colors.dart';
-import 'package:ekazi/widgets/avatar.dart';
 import 'package:ekazi/widgets/muted_text.dart';
 import 'package:ekazi/widgets/paragraph.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:get/get.dart';
 
 Widget notificationItem({bool isRead = false, title}) {
   return GestureDetector(

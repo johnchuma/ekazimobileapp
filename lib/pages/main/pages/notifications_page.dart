@@ -1,7 +1,6 @@
 import 'package:ekazi/pages/main/notification_tabs/all_notifications.dart';
 import 'package:ekazi/utils/colors.dart';
 import 'package:ekazi/widgets/heading_text.dart';
-import 'package:ekazi/widgets/notification_item.dart';
 import 'package:flutter/material.dart';
 
 class NotificationsPage extends StatelessWidget {
@@ -37,7 +36,7 @@ class NotificationsPage extends StatelessWidget {
           backgroundColor: backgroundColor,
           title: heading(text: "Notifications"),
         ),
-        body: TabBarView(children: [AllNotifications(),Container(),Container()]),
+        body: TabBarView(children: [const AllNotifications(),Container(),Container()]),
       ),
     );
   }

@@ -10,9 +10,7 @@ import 'package:ekazi/widgets/heading2_text.dart';
 import 'package:ekazi/widgets/heading_text.dart';
 import 'package:ekazi/widgets/muted_text.dart';
 import 'package:ekazi/widgets/paragraph.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 
 class ProfilePage extends StatelessWidget {
@@ -26,23 +24,23 @@ class ProfilePage extends StatelessWidget {
         leadingWidth: 0,
         title: heading(text: "Profile"),
       ),
-      body: Container(
+      body: SizedBox(
         width: double.infinity,
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 15),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               avatar(size: 120,image: "https://img.freepik.com/free-photo/side-view-ofserious-man_23-2148946213.jpg"),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               heading2(text: "Kelvin Cosmas Mushi"),
               mutedText(text: "johnvchuma@gmail.com"),
-              SizedBox(
+              const SizedBox(
                 height: 15,
               ),
               Row(
@@ -63,7 +61,7 @@ class ProfilePage extends StatelessWidget {
                             Icons.person,
                             color: mutedColor,
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 10,
                           ),
                           paragraph(text: "My Profile")
@@ -71,12 +69,12 @@ class ProfilePage extends StatelessWidget {
                       ),
                     )),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 5,
               ),
               GestureDetector(
                 onTap: () {
-                  Get.to(() => SavedCvPage());
+                  Get.to(() => const SavedCvPage());
                 },
                 child: Container(
                     decoration: decoration(),
@@ -89,7 +87,7 @@ class ProfilePage extends StatelessWidget {
                             Icons.save,
                             color: mutedColor,
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 10,
                           ),
                           paragraph(text: "My Saved CV's")
@@ -97,12 +95,12 @@ class ProfilePage extends StatelessWidget {
                       ),
                     )),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 5,
               ),
               GestureDetector(
                 onTap: () {
-                  Get.to(() => ChooseTemplatePage());
+                  Get.to(() => const ChooseTemplatePage());
                 },
                 child: Container(
                     decoration: decoration(),
@@ -115,7 +113,7 @@ class ProfilePage extends StatelessWidget {
                             Icons.download,
                             color: mutedColor,
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 10,
                           ),
                           paragraph(text: "Generate CV")
@@ -123,12 +121,12 @@ class ProfilePage extends StatelessWidget {
                       ),
                     )),
               ),
-                SizedBox(
+                const SizedBox(
                 height: 5,
               ),
                    GestureDetector(
                 onTap: () {
-                  Get.to(() => PrivacyPage());
+                  Get.to(() => const PrivacyPage());
                 },
                 child: Container(
                     decoration: decoration(),
@@ -141,7 +139,7 @@ class ProfilePage extends StatelessWidget {
                             Icons.lock,
                             color: mutedColor,
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 10,
                           ),
                           paragraph(text: "Set Privacy")
@@ -149,7 +147,7 @@ class ProfilePage extends StatelessWidget {
                       ),
                     )),
               ),
-                SizedBox(
+                const SizedBox(
                 height: 5,
               ),
                    GestureDetector(
@@ -167,7 +165,7 @@ class ProfilePage extends StatelessWidget {
                             Icons.edit_document,
                             color: mutedColor,
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 10,
                           ),
                           paragraph(text: "Consent Form")
@@ -175,7 +173,7 @@ class ProfilePage extends StatelessWidget {
                       ),
                     )),
               ),
-                SizedBox(
+                const SizedBox(
                 height: 5,
               ),
                    GestureDetector(
@@ -193,7 +191,7 @@ class ProfilePage extends StatelessWidget {
                             Icons.settings,
                             color: mutedColor,
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 10,
                           ),
                           paragraph(text: "Settings")
@@ -201,7 +199,7 @@ class ProfilePage extends StatelessWidget {
                       ),
                     )),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 5,
               ),
               GestureDetector(

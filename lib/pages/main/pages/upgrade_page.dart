@@ -1,11 +1,8 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ekazi/utils/colors.dart';
 import 'package:ekazi/widgets/appbar.dart';
 import 'package:ekazi/widgets/custom_button.dart';
 import 'package:ekazi/widgets/muted_text.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class UpgradePage extends StatelessWidget {
   const UpgradePage({super.key});
@@ -19,7 +16,7 @@ class UpgradePage extends StatelessWidget {
         child: Column(
           children: [
             Image.asset("assets/upgrade.png"),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Row(
@@ -27,8 +24,8 @@ class UpgradePage extends StatelessWidget {
                 ClipOval(
                   child: Container(
                     color: primaryColor,
-                    child: Padding(
-                      padding: const EdgeInsets.all(2),
+                    child: const Padding(
+                      padding: EdgeInsets.all(2),
                       child: Icon(
                         Icons.check,
                         size: 16,
@@ -37,13 +34,13 @@ class UpgradePage extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 10,
                 ),
                 mutedText(text: "Download CV without watermark")
               ],
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Row(
               children: [
                 ClipOval(

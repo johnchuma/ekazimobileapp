@@ -28,7 +28,7 @@ class _ProficiencyQualificationsState extends State<ProficiencyQualifications> {
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 10),
           child: showDetails
-              ? Container(
+              ? SizedBox(
                   width: double.infinity,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -50,7 +50,7 @@ class _ProficiencyQualificationsState extends State<ProficiencyQualifications> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Image.asset("assets/certificate.png"),
-                          SizedBox(
+                          const SizedBox(
                             width: 10,
                           ),
                           Expanded(
@@ -77,14 +77,14 @@ class _ProficiencyQualificationsState extends State<ProficiencyQualifications> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     paragraph(text: "Proficiency Qualifications"),
-                    SizedBox(
+                    const SizedBox(
                       width: 10,
                     ),
                     ClipOval(
                       child: Container(
                         color: primaryColor,
-                        child: Padding(
-                          padding: const EdgeInsets.all(2),
+                        child: const Padding(
+                          padding: EdgeInsets.all(2),
                           child: Icon(
                             Icons.check,
                             size: 16,

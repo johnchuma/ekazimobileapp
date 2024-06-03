@@ -1,3 +1,7 @@
+// ignore: file_names
+// ignore: file_names
+// ignore_for_file: file_names, duplicate_ignore
+
 import 'package:ekazi/pages/main/pages/job_details_page.dart';
 import 'package:ekazi/utils/box_decoration.dart';
 import 'package:ekazi/widgets/avatar.dart';
@@ -35,6 +39,7 @@ Widget appliedJobItem({image, title}) {
                   mutedText(text: "Applied 2 days ago", maxLines: 2)
                 ],
               )),
+              // ignore: prefer_const_constructors
               SizedBox(
                 width: 10,
               ),

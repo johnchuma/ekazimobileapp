@@ -4,7 +4,6 @@ import 'package:ekazi/widgets/heading2_text.dart';
 import 'package:ekazi/widgets/muted_text.dart';
 import 'package:ekazi/widgets/paragraph.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class TrainingsAndWorkshops extends StatefulWidget {
   const TrainingsAndWorkshops({super.key});
@@ -28,7 +27,7 @@ class _TrainingsAndWorkshopsState extends State<TrainingsAndWorkshops> {
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 10),
           child: showDetails
-              ? Container(
+              ? SizedBox(
                   width: double.infinity,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -52,7 +51,7 @@ class _TrainingsAndWorkshopsState extends State<TrainingsAndWorkshops> {
                           SizedBox(
                               height: 20,
                               child: Image.asset("assets/workshop.png")),
-                          SizedBox(
+                          const SizedBox(
                             width: 10,
                           ),
                           Expanded(
@@ -78,14 +77,14 @@ class _TrainingsAndWorkshopsState extends State<TrainingsAndWorkshops> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     paragraph(text: "Trainings and Workshops"),
-                    SizedBox(
+                    const SizedBox(
                       width: 10,
                     ),
                     ClipOval(
                       child: Container(
                         color: primaryColor,
-                        child: Padding(
-                          padding: const EdgeInsets.all(2),
+                        child: const Padding(
+                          padding: EdgeInsets.all(2),
                           child: Icon(
                             Icons.check,
                             size: 16,

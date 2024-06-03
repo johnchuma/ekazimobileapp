@@ -16,11 +16,11 @@ Widget membersWidget(int number) {
               height: 10,
               color: Colors.green[600],
             )),
-            SizedBox(
+            const SizedBox(
               width: 15,
             ),
             heading(
-                text: "${number} Members joined",
+                text: "$number Members joined",
                 color: Colors.black,
                 fontSize: 11),
           ],

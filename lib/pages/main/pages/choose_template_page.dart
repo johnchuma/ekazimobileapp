@@ -4,7 +4,6 @@ import 'package:ekazi/utils/box_decoration.dart';
 import 'package:ekazi/widgets/appbar.dart';
 import 'package:ekazi/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 
 class ChooseTemplatePage extends StatelessWidget {
@@ -20,7 +19,7 @@ class ChooseTemplatePage extends StatelessWidget {
           children: [
             Expanded(
               child: GridView(
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
                     mainAxisSpacing: 10,
                     crossAxisSpacing: 10),
@@ -47,7 +46,7 @@ class ChooseTemplatePage extends StatelessWidget {
                 onClick: () {
                   Get.to(() => const CvPreviewPage());
                 }),
-            SizedBox(
+            const SizedBox(
               height: 40,
             ),
           ],

@@ -27,7 +27,7 @@ class _EducationBackgroundState extends State<EducationBackground> {
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 10),
           child: showDetails
-              ? Container(
+              ? SizedBox(
                   width: double.infinity,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -49,7 +49,7 @@ class _EducationBackgroundState extends State<EducationBackground> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Image.asset("assets/graduation.png"),
-                          SizedBox(
+                          const SizedBox(
                             width: 10,
                           ),
                           Expanded(
@@ -76,14 +76,14 @@ class _EducationBackgroundState extends State<EducationBackground> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     paragraph(text: "Education Background"),
-                    SizedBox(
+                    const SizedBox(
                       width: 10,
                     ),
                     ClipOval(
                       child: Container(
                         color: primaryColor,
-                        child: Padding(
-                          padding: const EdgeInsets.all(2),
+                        child: const Padding(
+                          padding: EdgeInsets.all(2),
                           child: Icon(
                             Icons.check,
                             size: 16,

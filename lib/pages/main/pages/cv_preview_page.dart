@@ -1,3 +1,5 @@
+// ignore_for_file: unnecessary_import
+
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ekazi/utils/colors.dart';
 import 'package:ekazi/widgets/appbar.dart';
@@ -21,11 +23,11 @@ class CvPreviewPage extends StatelessWidget {
               imageUrl:
                   "https://d.novoresume.com/images/doc/skill-based-cv-template.png",
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             customButton(text: "Download CV"),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             customButton(

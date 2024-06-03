@@ -1,7 +1,6 @@
 import 'package:ekazi/utils/box_decoration.dart';
 import 'package:ekazi/utils/colors.dart';
 import 'package:ekazi/widgets/heading2_text.dart';
-import 'package:ekazi/widgets/muted_text.dart';
 import 'package:ekazi/widgets/paragraph.dart';
 import 'package:ekazi/widgets/pill.dart';
 import 'package:flutter/material.dart';
@@ -28,7 +27,7 @@ class _SkillsState extends State<Skills> {
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 10),
           child: showDetails
-              ? Container(
+              ? SizedBox(
                   width: double.infinity,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -62,14 +61,14 @@ class _SkillsState extends State<Skills> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     paragraph(text: "Skills"),
-                    SizedBox(
+                    const SizedBox(
                       width: 10,
                     ),
                     ClipOval(
                       child: Container(
                         color: primaryColor,
-                        child: Padding(
-                          padding: const EdgeInsets.all(2),
+                        child: const Padding(
+                          padding: EdgeInsets.all(2),
                           child: Icon(
                             Icons.check,
                             size: 16,

@@ -1,8 +1,6 @@
 import 'package:ekazi/utils/colors.dart';
 import 'package:ekazi/widgets/appliedJobItem.dart';
-import 'package:ekazi/widgets/job_item.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class AppliedJobs extends StatelessWidget {
   const AppliedJobs({super.key});
@@ -15,7 +13,7 @@ class AppliedJobs extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 15),
         child: ListView(
           children: [
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             appliedJobItem(

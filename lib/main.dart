@@ -24,10 +24,10 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: FutureBuilder(
-          future: Future.delayed(Duration(seconds: 5)),
+          future: Future.delayed(const Duration(seconds: 5)),
           builder: (context, snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
-              return SplashScreen();
+              return const SplashScreen();
             }
             return const LoginPage();
           }),

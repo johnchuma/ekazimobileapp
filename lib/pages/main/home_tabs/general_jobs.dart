@@ -1,78 +1,91 @@
-import 'package:ekazi/utils/box_decoration.dart';
+import 'package:ekazi/controllers/jobs_controller.dart';
 import 'package:ekazi/utils/colors.dart';
-import 'package:ekazi/widgets/avatar.dart';
 import 'package:ekazi/widgets/featured_job_item.dart';
 import 'package:ekazi/widgets/heading2_text.dart';
-import 'package:ekazi/widgets/heading_text.dart';
 import 'package:ekazi/widgets/job_item.dart';
-import 'package:ekazi/widgets/muted_text.dart';
 import 'package:ekazi/widgets/paragraph.dart';
-import 'package:ekazi/widgets/pill.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:get/get.dart';
 
-class GeneralJobs extends StatelessWidget {
+class GeneralJobs extends StatefulWidget {
   const GeneralJobs({super.key});
+
+  @override
+  State<GeneralJobs> createState() => _GeneralJobsState();
+}
+
+class _GeneralJobsState extends State<GeneralJobs> {
+   JobsController jobsController = JobsController();
+   @override
+  void initState() {
+    Get.put(jobsController);
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Scaffold(
         backgroundColor: backgroundColor,
-        body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 15),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(
-                height: 20,
-              ),
-              heading2(text: "Featured Jobs"),
-              SizedBox(
-                height: 10,
-              ),
-              Container(
-                height: 160,
-                child: ListView(
-                  scrollDirection: Axis.horizontal,
+        body: SingleChildScrollView(
+          child: FutureBuilder(
+            future: JobsController.getJobs(page: 1,limit: 30),
+            builder: (context,snapshot) {
+              if(snapshot.connectionState == ConnectionState.waiting){
+                return Center(child: Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 20),
+                  child: SizedBox(
+                    height: 20,
+                    width: 20,
+                    child: CircularProgressIndicator(color: primaryColor)),
+                ));
+              }
+              List<dynamic> data = snapshot.requireData as List<dynamic>;
+              return Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 15),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    featuredJobItem(),
-                    featuredJobItem(),
-                    featuredJobItem()
+                    const SizedBox(
+                      height: 20,
+                    ),
+                          heading2(text: "Featured Jobs"),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    SizedBox(
+                      height: 160,
+                      child: ListView(
+                        scrollDirection: Axis.horizontal,
+                        children: data.where((element) => element['featured'] == 1).map((item) => featuredJobItem(item)).toList(),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 15,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 10),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          heading2(text: "All Jobs"),
+                          paragraph(
+                              text: "See All",
+                              color: primaryColor,
+                              textDecoration: TextDecoration.underline)
+                        ],
+                      ),
+                    ),
+                   Column(children:  data.where((element) => element['featured'] == 0).map((item) {
+                      return jobItem(item);
+                    }).toList(),),
+                    
                   ],
                 ),
-              ),
-              SizedBox(
-                height: 15,
-              ),
-              Padding(
-                padding: const EdgeInsets.only(bottom: 10),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    heading2(text: "All Jobs"),
-                    paragraph(
-                        text: "See All",
-                        color: primaryColor,
-                        textDecoration: TextDecoration.underline)
-                  ],
-                ),
-              ),
-              jobItem(
-                  image:
-                      "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/HP_logo_2012.svg/1200px-HP_logo_2012.svg.png"),
-              jobItem(
-                  title: "Frontend Engineer",
-                  image: "https://www.facebook.com/images/fb_icon_325x325.png"),
-              jobItem(
-                  title: "Frontend Engineer",
-                  image:
-                      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Opera_2015_icon.svg/1200px-Opera_2015_icon.svg.png"),
-            ],
+              );
+            }
           ),
         ),
-      ),
-    );
+      );
+    
   }
 }

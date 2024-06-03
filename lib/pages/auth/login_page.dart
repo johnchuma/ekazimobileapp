@@ -1,15 +1,9 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ekazi/pages/main/base_page.dart';
-import 'package:ekazi/pages/main/pages/home_page.dart';
 import 'package:ekazi/utils/box_decoration.dart';
 import 'package:ekazi/utils/colors.dart';
-import 'package:ekazi/widgets/custom_button.dart';
-import 'package:ekazi/widgets/heading_text.dart';
 import 'package:ekazi/widgets/muted_text.dart';
 import 'package:ekazi/widgets/paragraph.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -86,12 +80,12 @@ class LoginPage extends StatelessWidget {
                       text: "Set your career in motion with ekazi.",
                       textAlign: TextAlign.center),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 GestureDetector(
                   onTap: () {
-                    Get.to(() => basePage());
+                    Get.to(() => const basePage());
                   },
                   child: Container(
                     width: double.infinity,
@@ -105,7 +99,7 @@ class LoginPage extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 ClipRRect(
@@ -121,7 +115,7 @@ class LoginPage extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Image.asset("assets/google.png"),
-                            SizedBox(
+                            const SizedBox(
                               width: 5,
                             ),
                             paragraph(
@@ -133,7 +127,7 @@ class LoginPage extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 ClipRRect(
@@ -149,7 +143,7 @@ class LoginPage extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Image.asset("assets/linkin.png"),
-                            SizedBox(
+                            const SizedBox(
                               width: 5,
                             ),
                             paragraph(

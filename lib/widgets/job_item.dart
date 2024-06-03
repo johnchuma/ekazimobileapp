@@ -1,15 +1,17 @@
-import 'package:cached_network_image/cached_network_image.dart';
+import 'package:ekazi/controllers/jobs_controller.dart';
 import 'package:ekazi/pages/main/pages/job_details_page.dart';
 import 'package:ekazi/utils/box_decoration.dart';
-import 'package:ekazi/widgets/avatar.dart';
+import 'package:ekazi/utils/format_date.dart';
 import 'package:ekazi/widgets/muted_text.dart';
 import 'package:ekazi/widgets/paragraph.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-Widget jobItem({image, title}) {
+Widget jobItem(item) {
+  JobsController jobsController = Get.find();
   return GestureDetector(
     onTap: () {
+      jobsController.selectedJob = item;
       Get.to(() => JobDetailsPage());
     },
     child: Padding(
@@ -20,9 +22,6 @@ Widget jobItem({image, title}) {
           padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
           child: Row(
             children: [
-              SizedBox(
-                      height: 30,
-                      child: CachedNetworkImage(imageUrl: image)),
               const SizedBox(
                 width: 10,
               ),
@@ -30,17 +29,17 @@ Widget jobItem({image, title}) {
                   child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  paragraph(text: title ?? "Full stack developer"),
+                  paragraph(text: item["job_position"]["position_name"]),
                   mutedText(
                       text:
-                          "Est nostrud exercitation laborum sint proident ex aliquip ipsum minim .",
+                           item["client"]==null?"":item["client"]["client_name"],
                       maxLines: 2)
                 ],
               )),
-              SizedBox(
+              const SizedBox(
                 width: 10,
               ),
-              mutedText(text: "2 min ago")
+              mutedText(text: timeAgo(DateTime.parse(item["created_at"])))
             ],
           ),
         ),

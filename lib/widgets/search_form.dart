@@ -14,7 +14,7 @@ Widget searchForm({text}) {
                 prefixIcon: const Icon(Icons.search),
                 fillColor: primaryColor,
                 prefixIconColor: Colors.black45,
-                hintStyle: TextStyle(fontSize: 13),
+                hintStyle: const TextStyle(fontSize: 13),
                 border: InputBorder.none,
                 hintText: text ?? ""))),
   );

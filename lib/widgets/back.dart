@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
+// ignore: implementation_imports
 import 'package:get/get.dart';
 import 'package:icons_plus/icons_plus.dart';
 

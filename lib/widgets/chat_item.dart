@@ -1,10 +1,8 @@
-import 'package:ekazi/pages/main/pages/job_details_page.dart';
 import 'package:ekazi/utils/box_decoration.dart';
 import 'package:ekazi/widgets/avatar.dart';
 import 'package:ekazi/widgets/muted_text.dart';
 import 'package:ekazi/widgets/paragraph.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 Widget chatItem({image, title}) {
   return GestureDetector(
@@ -35,7 +33,7 @@ Widget chatItem({image, title}) {
                       maxLines: 2)
                 ],
               )),
-              SizedBox(
+              const SizedBox(
                 width: 10,
               ),
               mutedText(text: "2 min ago")

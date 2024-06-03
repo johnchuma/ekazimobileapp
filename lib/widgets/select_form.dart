@@ -3,7 +3,6 @@ import 'package:ekazi/utils/box_decoration.dart';
 import 'package:ekazi/widgets/muted_text.dart';
 import 'package:flutter/material.dart';
 import 'package:ekazi/utils/colors.dart';
-import 'package:ekazi/widgets/paragraph.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 Widget selectForm(

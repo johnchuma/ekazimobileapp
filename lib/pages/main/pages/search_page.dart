@@ -3,15 +3,10 @@ import 'package:ekazi/widgets/bottomsheet_template.dart';
 import 'package:ekazi/widgets/custom_button.dart';
 import 'package:ekazi/widgets/heading2_text.dart';
 import 'package:ekazi/widgets/heading_text.dart';
-import 'package:ekazi/widgets/job_item.dart';
-import 'package:ekazi/widgets/muted_text.dart';
 import 'package:ekazi/widgets/paragraph.dart';
 import 'package:ekazi/widgets/search_form.dart';
 import 'package:ekazi/widgets/select_form.dart';
-import 'package:ekazi/widgets/text_form.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 
 class SearchPage extends StatefulWidget {
@@ -140,18 +135,8 @@ class _SearchPageState extends State<SearchPage> {
             ),
             Expanded(
                 child: ListView(
-              children: [
-                jobItem(
-                    image:
-                        "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/HP_logo_2012.svg/1200px-HP_logo_2012.svg.png"),
-                jobItem(
-                    title: "Frontend Engineer",
-                    image:
-                        "https://www.facebook.com/images/fb_icon_325x325.png"),
-                jobItem(
-                    title: "Frontend Engineer",
-                    image:
-                        "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Opera_2015_icon.svg/1200px-Opera_2015_icon.svg.png"),
+              children: const [
+               
               ],
             ))
           ],

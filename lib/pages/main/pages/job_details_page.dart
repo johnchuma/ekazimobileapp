@@ -1,25 +1,28 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:ekazi/controllers/jobs_controller.dart';
 import 'package:ekazi/pages/main/pages/send_application_page.dart';
 import 'package:ekazi/utils/box_decoration.dart';
 import 'package:ekazi/utils/colors.dart';
+import 'package:ekazi/utils/format_date.dart';
 import 'package:ekazi/widgets/appbar.dart';
-import 'package:ekazi/widgets/avatar.dart';
 import 'package:ekazi/widgets/custom_button.dart';
 import 'package:ekazi/widgets/heading2_text.dart';
 import 'package:ekazi/widgets/muted_text.dart';
 import 'package:ekazi/widgets/outline_item.dart';
 import 'package:ekazi/widgets/paragraph.dart';
 import 'package:ekazi/widgets/pill.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
+import 'package:html/parser.dart';
 
+// ignore: must_be_immutable
 class JobDetailsPage extends StatelessWidget {
-  const JobDetailsPage({super.key});
+  JobDetailsPage({super.key});
+    JobsController  jobsController = Get.find();
 
   @override
   Widget build(BuildContext context) {
+    var job = jobsController.selectedJob;
     return Scaffold(
       backgroundColor: backgroundColor,
       appBar: appbar(title: "Job Details"),
@@ -48,9 +51,9 @@ class JobDetailsPage extends StatelessWidget {
                               child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              paragraph(text: "Full stack developer"),
+                              paragraph(text: job["job_position"]["position_name"]),
                               mutedText(
-                                  text: "Smart foundry africa group",
+                                  text: job["client"]==null?"":job["client"]["client_name"],
                                   maxLines: 2)
                             ],
                           )),
@@ -66,9 +69,9 @@ class JobDetailsPage extends StatelessWidget {
                         alignment: WrapAlignment.start,
                         direction: Axis.horizontal,
                         children: [
-                         pill(text: "3 min ago", fontWeight: FontWeight.w400),
-                    pill(text: "2 positions", fontWeight: FontWeight.w400),
-                    pill(text: "30 views", fontWeight: FontWeight.w400),
+                         pill(text: timeAgo(DateTime.parse(job["created_at"])), fontWeight: FontWeight.w400),
+                    pill(text: "${job["statistic"]["job_likes"]} positions", fontWeight: FontWeight.w400),
+                    pill(text: "${job["statistic"]["job_views"]} views", fontWeight: FontWeight.w400),
                     pill(text: "4 applicants", fontWeight: FontWeight.w400),
                         ],
                       ),
@@ -136,7 +139,7 @@ class JobDetailsPage extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           mutedText(text: "Job Type"),
-                          paragraph(maxLines: 2, text: "Full Time"),
+                          paragraph(maxLines: 2, text: job["job_type"]["type_name"]),
                         ],
                       ),
                          Row(
@@ -150,7 +153,7 @@ class JobDetailsPage extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           mutedText(text: "Deadline"),
-                          paragraph(maxLines: 2, text: "20/05/2024"),
+                          paragraph(maxLines: 2, text: formatDate(DateTime.parse(job["created_at"]))),
                         ],
                       ),
                         
@@ -158,7 +161,7 @@ class JobDetailsPage extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Container(
@@ -179,7 +182,7 @@ class JobDetailsPage extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Container(
@@ -191,16 +194,12 @@ class JobDetailsPage extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       heading2(text: "Job Responsibility"),
-                      outlineItem(
-                          text:
-                              "Perform effective customer coverage to sell all specifed Unapower/Caterpillar Power."),
-                      outlineItem(
-                          text: "All specifed Unapower/Caterpillar Power.")
+                     paragraph(text: parseFragment(job["job_duties"]["main_duties"]).text)
                     ],
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Container(
@@ -212,16 +211,12 @@ class JobDetailsPage extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       heading2(text: "Job Requirements"),
-                      outlineItem(
-                          text:
-                              "Perform effective customer coverage to sell all specifed Unapower/Caterpillar Power."),
-                      outlineItem(
-                          text: "All specifed Unapower/Caterpillar Power.")
+                      paragraph(text: parseFragment(job["job_other_requirement"]["other_requirement"]).text)
                     ],
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Container(
@@ -251,15 +246,15 @@ class JobDetailsPage extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               customButton(
                   text: "Apply",
                   onClick: () {
-                    Get.to(() => SendApplicationPage());
+                    Get.to(() => const SendApplicationPage());
                   }),
-              SizedBox(
+              const SizedBox(
                 height: 50,
               ),
             ],

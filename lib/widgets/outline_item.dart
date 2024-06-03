@@ -13,7 +13,7 @@ Widget outlineItem({text}) {
           color: borderColor,
         ),
       ),
-      SizedBox(
+      const SizedBox(
         width: 10,
       ),
       Expanded(

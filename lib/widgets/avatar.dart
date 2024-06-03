@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 Widget avatar({double? size, image}) {
   return ClipOval(
-      child: Container(
+      child: SizedBox(
     height: size ?? 50,
     width: size ?? 50,
     child: CachedNetworkImage(

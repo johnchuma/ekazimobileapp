@@ -27,7 +27,7 @@ class _PrimaryDetailsState extends State<PrimaryDetails> {
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 10),
           child: showDetails
-              ? Container(
+              ? SizedBox(
                   width: double.infinity,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -42,7 +42,7 @@ class _PrimaryDetailsState extends State<PrimaryDetails> {
                           )
                         ],
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 15,
                       ),
                       Row(
@@ -108,14 +108,14 @@ class _PrimaryDetailsState extends State<PrimaryDetails> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     paragraph(text: "Primary Details"),
-                    SizedBox(
+                    const SizedBox(
                       width: 10,
                     ),
                     ClipOval(
                       child: Container(
                         color: primaryColor,
-                        child: Padding(
-                          padding: const EdgeInsets.all(2),
+                        child: const Padding(
+                          padding: EdgeInsets.all(2),
                           child: Icon(
                             Icons.check,
                             size: 16,

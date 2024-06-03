@@ -1,6 +1,7 @@
 // ignore_for_file: depend_on_referenced_packages
 
 import 'package:intl/intl.dart';
+import 'package:timeago/timeago.dart' as timeago;
 
 String formatDate(DateTime date) {
   return DateFormat("dd MMM, yyy").format(date);
@@ -9,7 +10,9 @@ String formatDate(DateTime date) {
 String formDateFormat(DateTime date) {
   return DateFormat("yyy-MM-dd").format(date);
 }
-
+String timeAgo (DateTime date){
+  return timeago.format(date);
+}
 String formatMonthYear(DateTime date) {
   return DateFormat("MMM yyy").format(date);
 }

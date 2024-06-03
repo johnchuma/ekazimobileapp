@@ -16,10 +16,10 @@ Widget customButton(
         color: color ?? primaryColor,
         width: double.infinity,
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 50, vertical: 25),
+          padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 25),
           child: Center(
               child: loading
-                  ? Center(
+                  ? const Center(
                       child: CircularProgressIndicator(
                         color: Colors.white,
                       ),

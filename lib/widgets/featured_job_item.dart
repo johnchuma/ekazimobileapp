@@ -1,16 +1,16 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ekazi/pages/main/pages/job_details_page.dart';
 import 'package:ekazi/utils/box_decoration.dart';
 import 'package:ekazi/utils/colors.dart';
-import 'package:ekazi/widgets/avatar.dart';
+import 'package:ekazi/utils/format_date.dart';
 import 'package:ekazi/widgets/muted_text.dart';
 import 'package:ekazi/widgets/paragraph.dart';
 import 'package:ekazi/widgets/pill.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:html/parser.dart';
 
-Widget featuredJobItem() {
+Widget featuredJobItem(item) {
   return Builder(builder: (context) {
     return GestureDetector(
       onTap: () {
@@ -28,9 +28,9 @@ Widget featuredJobItem() {
               children: [
                 Row(
                   children: [
-                    SizedBox(
-                      height: 30,
-                      child: CachedNetworkImage(imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDA1JSs-3s1XYt2SfBx6WGOV0L1keDp0Owt7UB_u5q2A&s")),
+                    // SizedBox(
+                    //   height: 30,
+                    //   child: CachedNetworkImage(imageUrl: "$imageBaseUrl/${item["client"]["logo"]}")),
                     const SizedBox(
                       width: 10,
                     ),
@@ -38,9 +38,9 @@ Widget featuredJobItem() {
                         child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        paragraph(text: "Full stack developer"),
+                        paragraph(text: item["job_position"]["position_name"],maxLines: 1),
                         mutedText(
-                            text: "Smart foundry africa group", maxLines: 2)
+                            text:item["client"]["client_name"], maxLines: 2)
                       ],
                     )),
                     const SizedBox(
@@ -62,7 +62,7 @@ Widget featuredJobItem() {
                   alignment: WrapAlignment.start,
                   direction: Axis.horizontal,
                   children: [
-                    pill(text: "3 min ago", fontWeight: FontWeight.w400),
+                    pill(text:timeAgo(DateTime.parse(item["created_at"])), fontWeight: FontWeight.w400),
                     pill(text: "2 positions", fontWeight: FontWeight.w400),
                     pill(text: "30 views", fontWeight: FontWeight.w400),
                     pill(text: "4 applicants", fontWeight: FontWeight.w400),
@@ -76,7 +76,7 @@ Widget featuredJobItem() {
                 paragraph(
                     maxLines: 2,
                     text:
-                        "Occaecat minim laborum aliquip est commodo do velit labore proident laborum laborum veniam.")
+                        parseFragment(item["job_duties"]["main_duties"]).text)
               ],
             ),
           ),
